@@ -10,3 +10,5 @@ class CommentVotesController < ApplicationController
     redirect_to :back
   end
 end
+
+# REV: Nice.  I like the way you structured this. 

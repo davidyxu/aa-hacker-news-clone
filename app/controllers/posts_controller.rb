@@ -27,3 +27,5 @@ class PostsController < ApplicationController
 
 
 end
+
+# REV: Are users able to destroy posts? 

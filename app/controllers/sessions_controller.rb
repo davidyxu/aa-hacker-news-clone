@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    @username = ""
+    @username = "" 
   end
 
   def create
@@ -17,3 +17,6 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 end
+
+
+# REV: Looks great!
