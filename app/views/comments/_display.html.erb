@@ -1,0 +1,16 @@
+<%= link_to "^", {:controller => :comment_votes, :action => :create, :comment_id => comment.id }, :method => :post %>
+<small>
+  <%=link_to "#{comment.author.username}", user_path(comment.author_id)%>
+  TIME STAMP STUFF |
+  <%=link_to "link", comment_path(comment)%>
+  <% if show_parent && !comment.parent_id.nil?%>
+   <%= " | " %><%= link_to "parent", comment_path(comment.parent_id) %>
+  <% end %>
+</small>
+<br>
+<%= comment.body %>
+<br>
+<small>
+  <%= link_to "reply", comment_path(comment)%>
+</small>
+

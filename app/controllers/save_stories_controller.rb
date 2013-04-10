@@ -1,0 +1,2 @@
+class SaveStoriesController < ApplicationController
+end

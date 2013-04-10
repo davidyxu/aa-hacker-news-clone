@@ -1,0 +1,31 @@
+<p>
+  <% if @post.link.empty?%>
+    <%= link_to @post.title, post_url(@post) %>
+  <% else %>
+    <a href="http://<%= "#{@post.link}" %>"><%= @post.title %></a>
+  <% end%>
+  <small>
+    <%= @post.link.empty? ? nil : "(#{@post.link})" %>
+  </small>
+  <br>
+  <small>
+   <%=total_post_karma(@post.id)%> points by <%= link_to @post.author.username, user_url(@post.author)%> |
+    <%="#{distance_of_time_in_words_to_now(@post.created_at)} ago" %> |
+  <%= link_to "#{comment_count(@post.id)} Comments", post_path(@post) %>
+  </small>
+</p>
+
+<p>
+  <%= @post.body %>
+</p>
+
+<p>
+  <%= render :partial => 'comments/form', :locals => {:parent_id => nil, :post_id => @post.id }%>
+</p>
+
+<p>
+  <% @comments.each do |comment| %>
+  <%= render :partial => 'comments/display', :locals => {:comment => comment, :show_parent => false} %>
+  <br><br>
+  <% end %>
+</p>

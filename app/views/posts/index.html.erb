@@ -1,0 +1,19 @@
+<ol>
+  <% @posts.each do |post| %>
+  <li>
+    <%= link_to "^", {:controller => :post_votes, :action => :create, :post_id => post.id }, :method => :post %>
+    <% if post.link.empty?%>
+      <%= link_to post.title, post_url(post) %>
+    <% else %>
+      <a href="<%= "http://#{post.link}" %>"><%= post.title %></a>
+    <% end%>
+    <small>
+      <%= post.link.empty? ? nil : "(#{post.link})" %>
+    </small>
+    <br>
+    <%=total_post_karma(post.id)%> points by <%= link_to post.author.username, user_url(post.author)%> |
+    <%="#{distance_of_time_in_words_to_now(post.created_at)} ago" %> |
+    <%= link_to "#{comment_count(post.id)} Comments", post_path(post) %>
+  </li>
+  <% end %>
+</ol>

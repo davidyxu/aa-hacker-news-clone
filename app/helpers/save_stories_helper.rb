@@ -1,0 +1,2 @@
+module SaveStoriesHelper
+end

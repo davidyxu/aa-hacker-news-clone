@@ -1,0 +1,24 @@
+<h1>Submit</h1>
+<%= form_for(@post) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <%= f.label :link %>
+  <%= f.text_field :link %>
+  <br>
+  <b>or</b>
+  <br>
+  <%= f.label :body %>
+  <br>
+  <%= f.text_area :body %>
+  <br>
+  <%#= f.fields_for(:comments) do |comment_form| %>
+
+    <%#= comment_form.label :body, "First Comment:"%>
+    <%#= comment_form.text_area :body %>
+    <br>
+  <%# end %>
+
+  <br>
+  <%= f.submit %>
+<% end %>

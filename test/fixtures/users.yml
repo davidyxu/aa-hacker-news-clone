@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  password_digest: MyString
+  about: MyText
+  email: MyString
+  show_dead: 1
+  no_procast: 1
+  max_visit: 1
+  min_away: 1
+  delay: 1
+
+two:
+  username: MyString
+  password_digest: MyString
+  about: MyText
+  email: MyString
+  show_dead: 1
+  no_procast: 1
+  max_visit: 1
+  min_away: 1
+  delay: 1

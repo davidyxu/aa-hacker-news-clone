@@ -1,0 +1,15 @@
+<p>
+
+  <%= render :partial => 'comments/display', :locals => {:comment => @current_comment, :show_parent => true }%>
+</p>
+
+<p>
+  <%= render :partial => 'comments/form', :locals => {:parent_id => @current_comment.id, :post_id => @current_comment.post_id }%>
+</p>
+
+<p>
+  <% @comments.each do |comment| %>
+  <%= render :partial => 'comments/display', :locals => {:comment => comment, :show_parent => false} %>
+  <br><br>
+  <% end %>
+</p>
